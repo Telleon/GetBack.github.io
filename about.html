@@ -9,31 +9,103 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Yellowtail&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-
 <style>
 
 *{
 box-sizing:border-box;
 }
 
-
 body{
-
 margin:0;
-
 background:#f4e3c1;
-
 font-family:'Quicksand',sans-serif;
-
 color:#4b321f;
-
 overflow-x:hidden;
+}
+
+
+/* NAV */
+
+.navbar{
+
+height:70px;
+background:#24150e;
+
+display:flex;
+justify-content:flex-end;
+align-items:center;
+
+padding:0 50px;
+
+gap:15px;
+
+}
+
+.navbar a{
+
+color:#f5dfb3;
+text-decoration:none;
+font-weight:600;
+
+}
+
+.navbar a:hover{
+
+color:#e49a50;
+
+}
+
+.dot{
+
+color:#e49a50;
+
+}
+
+
+/* BACK BUTTON */
+
+
+.back-button{
+
+position:fixed;
+
+top:90px;
+
+left:25px;
+
+z-index:30;
+
+background:#24150e;
+
+color:#f5dfb3;
+
+padding:12px 22px;
+
+border-radius:30px;
+
+text-decoration:none;
+
+font-weight:600;
+
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+transition:.3s;
+
+}
+
+
+.back-button:hover{
+
+background:#c96a2d;
+
+transform:translateX(-5px);
 
 }
 
 
 
-/* HEADER */
+
+/* HERO */
 
 
 .hero{
@@ -42,16 +114,15 @@ height:520px;
 
 display:flex;
 
-justify-content:center;
-
 align-items:center;
+
+justify-content:center;
 
 position:relative;
 
 overflow:hidden;
 
 }
-
 
 
 .hero-image{
@@ -63,77 +134,25 @@ inset:-60px;
 background:
 
 linear-gradient(
-rgba(0,0,0,.3),
-rgba(0,0,0,.3)
+rgba(0,0,0,.35),
+rgba(0,0,0,.35)
 ),
 
 url("PsDDD.jpeg");
 
-
 background-size:cover;
-
-background-position:center;
 
 filter:blur(10px);
 
 transform:scale(1.12);
 
-z-index:0;
-
 }
-
-
-
-.hero:after{
-
-content:"";
-
-position:absolute;
-
-width:160%;
-
-height:5px;
-
-background:#ffd27a;
-
-opacity:.45;
-
-filter:blur(5px);
-
-top:30%;
-
-left:-30%;
-
-transform:rotate(-8deg);
-
-animation:trace 6s linear infinite;
-
-z-index:1;
-
-}
-
-
-
-@keyframes trace{
-
-from{
-transform:translateX(-30%) rotate(-8deg);
-}
-
-to{
-transform:translateX(30%) rotate(-8deg);
-}
-
-}
-
 
 
 
 .hero-box{
 
 position:relative;
-
-z-index:2;
 
 background:rgba(201,106,45,.88);
 
@@ -143,26 +162,24 @@ border-radius:35px;
 
 text-align:center;
 
-box-shadow:0 15px 35px rgba(0,0,0,.3);
+box-shadow:0 20px 40px rgba(0,0,0,.35);
 
 }
-
 
 
 .hero h1{
 
 font-family:'Monoton',cursive;
 
-font-size:4rem;
-
 font-weight:400;
+
+font-size:4rem;
 
 color:#ffe7b3;
 
 margin:0;
 
 }
-
 
 
 .hero p{
@@ -200,10 +217,9 @@ padding:50px;
 
 border-radius:35px;
 
-box-shadow:0 12px 25px rgba(70,40,15,.15);
+box-shadow:0 12px 25px rgba(70,40,15,.18);
 
 }
-
 
 
 .about-box h2{
@@ -221,7 +237,6 @@ margin-top:0;
 }
 
 
-
 .about-box p{
 
 font-size:19px;
@@ -229,7 +244,6 @@ font-size:19px;
 line-height:1.8;
 
 }
-
 
 
 .highlight{
@@ -258,7 +272,6 @@ margin-top:70px;
 }
 
 
-
 .footer-grid{
 
 max-width:1150px;
@@ -274,13 +287,11 @@ gap:40px;
 }
 
 
-
 footer h3{
 
 color:#e49a50;
 
 }
-
 
 
 footer a{
@@ -296,7 +307,6 @@ margin:12px 0;
 }
 
 
-
 .bottom{
 
 text-align:center;
@@ -307,7 +317,6 @@ opacity:.7;
 
 }
 
-
 </style>
 
 </head>
@@ -316,14 +325,40 @@ opacity:.7;
 <body>
 
 
+<nav class="navbar">
+
+<a href="index.html">Home</a>
+
+<span class="dot">•</span>
+
+<a href="about.html">Who Are We</a>
+
+<span class="dot">•</span>
+
+<a href="contact.html">Contact Us</a>
+
+<span class="dot">•</span>
+
+<a href="https://www.ebay.com/usr/getback-machine">eBay</a>
+
+</nav>
+
+
+
+<a class="back-button" href="index.html">
+← Back to Store
+</a>
+
+
+
 
 <section class="hero">
 
 
-<div class="hero-image" id="heroImage"></div>
+<div class="hero-image"></div>
 
 
-<div class="hero-box" id="heroBox">
+<div class="hero-box">
 
 <h1>The Getback Machine</h1>
 
@@ -339,7 +374,6 @@ Don't just look at the past, hold it in your hands.
 
 
 
-
 <div class="container">
 
 
@@ -351,27 +385,23 @@ Don't just look at the past, hold it in your hands.
 
 <p>
 
-The Getback Machine is built on the idea that every collectible has a story, and every story deserves to be preserved.
+The Getback Machine was created by <span class="highlight">Lucas Sawtelle</span> and <span class="highlight">Dan Glover</span> with a shared passion for preserving history through collectibles.
 
 <br><br>
 
-
-Founded by <span class="highlight">Lucas Sawtelle</span>, an 18-year-old entrepreneur and college student with a passion for business, history, and collecting, The Getback Machine represents the next generation of collectors who are bringing the past into the future.
-
-<br><br>
-
-
-Alongside Lucas is <span class="highlight">Dan Glover</span>, a seasoned collector and former truck driver whose years on the road shaped his appreciation for discovering unique items and the stories behind them.
+Lucas is an 18-year-old entrepreneur and college student building the next generation of collectible sales while bringing fresh ideas, technology, and ambition to the business.
 
 <br><br>
 
-
-Dan has transformed his love for collecting into a local presence through his booth at <span class="highlight">Highway Pickers</span>, where he shares one-of-a-kind finds with fellow collectors and enthusiasts.
+Dan is a former truck driver turned collector whose years on the road gave him a unique eye for rare finds and the stories behind them.
 
 <br><br>
 
+Through his booth at <span class="highlight">Highway Pickers</span>, Dan shares his discoveries with fellow collectors and continues building a community around forgotten treasures.
 
-Together, Lucas and Dan combine experience, curiosity, and entrepreneurship to create a place where vintage treasures can find new homes and old memories can continue living.
+<br><br>
+
+Together, Lucas and Dan combine experience and new ideas to give old collectibles a new life.
 
 </p>
 
@@ -417,10 +447,6 @@ eBay Store
 All Listings
 </a>
 
-<a href="https://www.ebay.com/usr/getback-machine">
-Seller Profile
-</a>
-
 </div>
 
 
@@ -443,7 +469,6 @@ Email
 </div>
 
 
-
 <div class="bottom">
 
 © 2026 The Getback Machine. All rights reserved.
@@ -454,59 +479,17 @@ Email
 </footer>
 
 
-
-
-
 <script>
-
-
-const image =
-document.getElementById("heroImage");
-
-
-const box =
-document.getElementById("heroBox");
-
-
 
 window.addEventListener("scroll",()=>{
 
+document.querySelector(".hero-image").style.transform=
 
-let y =
-window.scrollY;
-
-
-
-image.style.transform =
-
-`
-
-scale(1.12)
-
-translate(
-${Math.sin(y/400)*15}px,
-${y*.12}px
-)
-
-`;
-
-
-
-box.style.transform =
-
-`
-
-translateY(${y*-.18}px)
-
-`;
-
-
+`scale(1.12) translateY(${window.scrollY*.12}px)`;
 
 });
 
-
 </script>
-
 
 
 </body>
