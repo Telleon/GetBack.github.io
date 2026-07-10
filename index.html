@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Getback Machine</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Monoton&family=Yellowtail&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+
+margin:0;
+
+background:#f4e3c1;
+
+font-family:'Quicksand',sans-serif;
+
+color:#4b321f;
+
+overflow-x:hidden;
+
+}
+
+
+/* HEADER */
+
+
+.hero{
+
+height:520px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+.hero-image{
+
+position:absolute;
+
+inset:-60px;
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.3),
+rgba(0,0,0,.3)
+),
+
+url("PsDDD.jpeg");
+
+
+background-size:cover;
+
+background-position:center;
+
+
+filter:blur(10px);
+
+
+transform:scale(1.12);
+
+z-index:0;
+
+}
+
+
+
+.hero:after{
+
+content:"";
+
+position:absolute;
+
+width:160%;
+
+height:5px;
+
+background:#ffd27a;
+
+opacity:.45;
+
+filter:blur(5px);
+
+top:30%;
+
+left:-30%;
+
+transform:rotate(-8deg);
+
+animation:trace 6s linear infinite;
+
+z-index:1;
+
+}
+
+
+
+@keyframes trace{
+
+from{
+
+transform:translateX(-30%) rotate(-8deg);
+
+}
+
+to{
+
+transform:translateX(30%) rotate(-8deg);
+
+}
+
+}
+
+
+
+
+.hero-box{
+
+position:relative;
+
+z-index:2;
+
+background:rgba(201,106,45,.88);
+
+padding:55px 70px;
+
+border-radius:35px;
+
+text-align:center;
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.3);
+
+}
+
+
+
+.hero h1{
+
+font-family:'Monoton',cursive;
+
+font-weight:400;
+
+font-size:4rem;
+
+color:#ffe7b3;
+
+margin:0;
+
+}
+
+
+
+.hero p{
+
+font-family:'Yellowtail',cursive;
+
+font-size:2.5rem;
+
+color:#fff2dc;
+
+}
+
+
+
+/* MAIN */
+
+
+.container{
+
+max-width:1150px;
+
+margin:auto;
+
+padding:50px 25px;
+
+}
+
+
+
+/* TEAM */
+
+
+.team{
+
+text-align:center;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+
+
+.team h2{
+
+font-family:'Yellowtail',cursive;
+
+font-size:50px;
+
+color:#8d421f;
+
+}
+
+
+
+.team p{
+
+font-size:18px;
+
+line-height:1.7;
+
+}
+
+
+
+/* PRODUCTS */
+
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+gap:30px;
+
+margin-top:60px;
+
+}
+
+
+
+.card{
+
+background:#fff1d2;
+
+padding:25px;
+
+border-radius:28px;
+
+text-align:center;
+
+box-shadow:
+
+0 12px 25px rgba(70,40,15,.15);
+
+transition:.3s;
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+
+.photo{
+
+height:180px;
+
+border-radius:20px;
+
+overflow:hidden;
+
+background:#c96a2d;
+
+}
+
+
+
+.photo img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+border-radius:20px;
+
+}
+
+
+
+.card h3{
+
+color:#8d421f;
+
+}
+
+
+
+.price{
+
+font-weight:bold;
+
+color:#b45727;
+
+margin:15px;
+
+}
+
+
+
+.button{
+
+display:inline-block;
+
+background:#c96a2d;
+
+color:white;
+
+padding:12px 25px;
+
+border-radius:30px;
+
+text-decoration:none;
+
+}
+
+
+
+.button:hover{
+
+background:#8d421f;
+
+}
+
+
+
+/* FOOTER */
+
+
+footer{
+
+background:#24150e;
+
+color:#f5dfb3;
+
+padding:50px 25px;
+
+margin-top:70px;
+
+}
+
+
+
+.footer-grid{
+
+max-width:1150px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+gap:40px;
+
+}
+
+
+
+footer h3{
+
+color:#e49a50;
+
+}
+
+
+
+footer a{
+
+display:block;
+
+color:#f5dfb3;
+
+text-decoration:none;
+
+margin:12px 0;
+
+}
+
+
+
+.bottom{
+
+text-align:center;
+
+margin-top:40px;
+
+opacity:.7;
+
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<section class="hero">
+
+
+<div class="hero-image" id="heroImage"></div>
+
+
+<div class="hero-box" id="heroBox">
+
+
+<h1>The Getback Machine</h1>
+
+<p>
+Don't just look at the past, hold it in your hands.
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<div class="container">
+
+
+
+<section class="team">
+
+
+<h2>Meet The Team</h2>
+
+
+<p>
+
+The Getback Machine was created by Dan Glover and Lucas Sawtelle with a shared passion for meaningful collectibles and timeless stories.
+
+<br><br>
+
+Dan brings years of collecting experience, strong salesmanship, and a deep appreciation for the history behind every piece.
+
+Lucas brings a fresh entrepreneurial vision and a commitment to building the future of The Getback Machine while carrying forward those values.
+
+<br><br>
+
+Together, they combine experience and innovation to connect collectors with unique treasures worth remembering.
+
+</p>
+
+
+</section>
+
+
+
+
+
+<div class="grid">
+
+
+
+<div class="card">
+
+<div class="photo">
+<img src="1.png" alt="Collectible 1">
+</div>
+
+<h3>Vintage Collectible #1</h3>
+
+<p>A rare piece from another era with a story and timeless appeal.</p>
+
+<div class="price">$00.00</div>
+
+<a class="button" href="YOUR_EBAY_ITEM_LINK_1">View Item</a>
+
+</div>
+
+
+
+
+<div class="card">
+
+<div class="photo">
+<img src="2.png" alt="Collectible 2">
+</div>
+
+<h3>Retro Collectible #2</h3>
+
+<p>A carefully selected treasure for collectors who value nostalgia.</p>
+
+<div class="price">$00.00</div>
+
+<a class="button" href="YOUR_EBAY_ITEM_LINK_2">View Item</a>
+
+</div>
+
+
+
+
+<div class="card">
+
+<div class="photo">
+<img src="3.png" alt="Collectible 3">
+</div>
+
+<h3>Classic Collectible #3</h3>
+
+<p>A memorable item chosen for craftsmanship and history.</p>
+
+<div class="price">$00.00</div>
+
+<a class="button" href="YOUR_EBAY_ITEM_LINK_3">View Item</a>
+
+</div>
+
+
+
+
+<div class="card">
+
+<div class="photo">
+<img src="4.png" alt="Collectible 4">
+</div>
+
+<h3>Rare Find #4</h3>
+
+<p>A unique discovery waiting for its next collector.</p>
+
+<div class="price">$00.00</div>
+
+<a class="button" href="YOUR_EBAY_ITEM_LINK_4">View Item</a>
+
+</div>
+
+
+
+
+<div class="card">
+
+<div class="photo">
+<img src="5.png" alt="Collectible 5">
+</div>
+
+<h3>Limited Treasure #5</h3>
+
+<p>A special collectible with a story worth preserving.</p>
+
+<div class="price">$00.00</div>
+
+<a class="button" href="YOUR_EBAY_ITEM_LINK_5">View Item</a>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<footer>
+
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>The Getback Machine</h3>
+
+<a href="#">Home</a>
+
+<a href="#">Who Are We</a>
+
+<a href="#">Contact Us</a>
+
+</div>
+
+
+
+
+<div>
+
+<h3>Shop</h3>
+
+<a href="YOUR_EBAY_STORE_LINK">
+eBay Store
+</a>
+
+<a href="YOUR_EBAY_LISTINGS_LINK">
+All Listings
+</a>
+
+<a href="https://www.ebay.com/usr/getback-machine">
+Seller Profile
+</a>
+
+</div>
+
+
+
+
+<div>
+
+<h3>Connect</h3>
+
+<a href="#">Instagram</a>
+
+<a href="#">Facebook</a>
+
+<a href="#">Email</a>
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="bottom">
+
+© 2026 The Getback Machine. All rights reserved.
+
+</div>
+
+
+</footer>
+
+
+
+
+
+<script>
+
+
+const image =
+document.getElementById("heroImage");
+
+
+const box =
+document.getElementById("heroBox");
+
+
+
+window.addEventListener("scroll",()=>{
+
+
+let y =
+window.scrollY;
+
+
+
+image.style.transform =
+
+`
+
+scale(1.12)
+
+translate(
+${Math.sin(y/400)*15}px,
+${y*.12}px
+)
+
+`;
+
+
+
+box.style.transform =
+
+`
+
+translateY(${y*-.18}px)
+
+`;
+
+
+
+});
+
+
+</script>
+
+
+
+</body>
+</html>
