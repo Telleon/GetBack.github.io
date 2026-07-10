@@ -9,12 +9,16 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Yellowtail&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-
 <style>
 
 *{
 box-sizing:border-box;
 }
+
+html{
+scroll-behavior:smooth;
+}
+
 
 body{
 
@@ -31,7 +35,66 @@ overflow-x:hidden;
 }
 
 
-/* HEADER */
+/* TOP NAVIGATION */
+
+.navbar{
+
+height:70px;
+
+background:#24150e;
+
+display:flex;
+
+justify-content:flex-end;
+
+align-items:center;
+
+padding:0 50px;
+
+position:sticky;
+
+top:0;
+
+z-index:20;
+
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+}
+
+
+.navbar a{
+
+color:#f5dfb3;
+
+text-decoration:none;
+
+font-weight:600;
+
+font-size:16px;
+
+transition:.3s;
+
+}
+
+
+.navbar a:hover{
+
+color:#e49a50;
+
+}
+
+
+.navbar span{
+
+color:#e49a50;
+
+margin:0 15px;
+
+}
+
+
+
+/* HERO */
 
 
 .hero{
@@ -56,29 +119,28 @@ overflow:hidden;
 
 position:absolute;
 
-inset:-60px;
+inset:-70px;
 
 background:
 
 linear-gradient(
-rgba(0,0,0,.3),
-rgba(0,0,0,.3)
+rgba(0,0,0,.35),
+rgba(0,0,0,.35)
 ),
 
 url("PsDDD.jpeg");
-
 
 background-size:cover;
 
 background-position:center;
 
-
 filter:blur(10px);
-
 
 transform:scale(1.12);
 
 z-index:0;
+
+transition:transform .25s ease-out;
 
 }
 
@@ -90,9 +152,9 @@ content:"";
 
 position:absolute;
 
-width:160%;
-
 height:5px;
+
+width:160%;
 
 background:#ffd27a;
 
@@ -113,7 +175,6 @@ z-index:1;
 }
 
 
-
 @keyframes trace{
 
 from{
@@ -129,7 +190,6 @@ transform:translateX(30%) rotate(-8deg);
 }
 
 }
-
 
 
 
@@ -149,7 +209,26 @@ text-align:center;
 
 box-shadow:
 
-0 15px 35px rgba(0,0,0,.3);
+0 20px 40px rgba(0,0,0,.35);
+
+animation:floating 4s ease-in-out infinite;
+
+}
+
+
+@keyframes floating{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
 
 }
 
@@ -159,9 +238,9 @@ box-shadow:
 
 font-family:'Monoton',cursive;
 
-font-weight:400;
-
 font-size:4rem;
+
+font-weight:400;
 
 color:#ffe7b3;
 
@@ -179,11 +258,13 @@ font-size:2.5rem;
 
 color:#fff2dc;
 
+margin:20px 0 0;
+
 }
 
 
 
-/* MAIN */
+/* CONTENT */
 
 
 .container{
@@ -192,13 +273,10 @@ max-width:1150px;
 
 margin:auto;
 
-padding:50px 25px;
+padding:60px 25px;
 
 }
 
-
-
-/* TEAM */
 
 
 .team{
@@ -212,12 +290,11 @@ margin:auto;
 }
 
 
-
 .team h2{
 
 font-family:'Yellowtail',cursive;
 
-font-size:50px;
+font-size:55px;
 
 color:#8d421f;
 
@@ -229,7 +306,7 @@ color:#8d421f;
 
 font-size:18px;
 
-line-height:1.7;
+line-height:1.8;
 
 }
 
@@ -264,17 +341,20 @@ text-align:center;
 
 box-shadow:
 
-0 12px 25px rgba(70,40,15,.15);
+0 12px 25px rgba(70,40,15,.18);
 
-transition:.3s;
+transition:.35s;
 
 }
 
 
-
 .card:hover{
 
-transform:translateY(-10px);
+transform:translateY(-12px);
+
+box-shadow:
+
+0 20px 35px rgba(70,40,15,.25);
 
 }
 
@@ -296,13 +376,11 @@ background:#c96a2d;
 
 .photo img{
 
-width:100%;
-
 height:100%;
 
-object-fit:cover;
+width:100%;
 
-border-radius:20px;
+object-fit:cover;
 
 }
 
@@ -317,6 +395,8 @@ color:#8d421f;
 
 
 .price{
+
+font-size:20px;
 
 font-weight:bold;
 
@@ -336,133 +416,74 @@ background:#c96a2d;
 
 color:white;
 
-padding:12px 25px;
+padding:12px 28px;
 
 border-radius:30px;
 
 text-decoration:none;
 
-}
+transition:.3s;
 
+}
 
 
 .button:hover{
 
 background:#8d421f;
 
-}
-
-
-
-/* FOOTER */
-
-
-footer{
-
-background:#24150e;
-
-color:#f5dfb3;
-
-padding:50px 25px;
-
-margin-top:70px;
+transform:scale(1.05);
 
 }
-
-
-
-.footer-grid{
-
-max-width:1150px;
-
-margin:auto;
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-
-gap:40px;
-
-}
-
-
-
-footer h3{
-
-color:#e49a50;
-
-}
-
-
-
-footer a{
-
-display:block;
-
-color:#f5dfb3;
-
-text-decoration:none;
-
-margin:12px 0;
-
-}
-
-
-
-.bottom{
-
-text-align:center;
-
-margin-top:40px;
-
-opacity:.7;
-
-}
-
 
 
 </style>
 
 </head>
 
-
-
 <body>
+
+
+<nav class="navbar">
+
+<a href="index.html">Home</a>
+
+<span>•</span>
+
+<a href="about.html">Who Are We</a>
+
+<span>•</span>
+
+<a href="contact.html">Contact Us</a>
+
+<span>•</span>
+
+<a href="https://www.ebay.com/usr/getback-machine">eBay</a>
+
+</nav>
 
 
 <section class="hero">
 
-
 <div class="hero-image" id="heroImage"></div>
 
 
-<div class="hero-box" id="heroBox">
-
+<div class="hero-box">
 
 <h1>The Getback Machine</h1>
 
-<p>
-Don't just look at the past, hold it in your hands.
-</p>
-
+<p>Don't just look at the past, hold it in your hands.</p>
 
 </div>
 
-
 </section>
-
-
 
 
 <div class="container">
 
 
-
 <section class="team">
 
-
-<h3>Meet The Team</h3>
-
+<h2>Meet The Team</h2>
 
 <p>
 
@@ -470,122 +491,116 @@ The Getback Machine was created by Dan Glover and Lucas Sawtelle with a shared p
 
 <br><br>
 
-Dan brings years of collecting experience and a deep appreciation for the history behind every piece.
+Dan brings years of collecting experience and a deep appreciation for the stories behind every piece.
 
-Lucas brings a fresh entrepreneurial vision and a commitment to building the future of The Getback Machine while carrying forward those values.
+Lucas brings a fresh entrepreneurial vision and a commitment to building the future of The Getback Machine.
 
+</p>
 
 </section>
-
-
 
 
 
 <div class="grid">
 
 
-
 <div class="card">
 
 <div class="photo">
+
 <img src="1.jpeg" alt="Collectible 1">
+
 </div>
 
-<h3>1955 hocus focus straight edge card "The Bentley" card number 9 of 10 *RARE*</h3>
+<h3>1955 Hocus Focus Straight Edge Card "The Bentley" Card Number 9 of 10</h3>
 
-<p>!!!**ONLY ONE KNOWN, EXTREMELY RARE FIND**!!</p>
+<p>ONLY ONE KNOWN, EXTREMELY RARE FIND</p>
 
 <div class="price">$150.00</div>
 
-<a class="button" href="https://www.ebay.com/itm/318565802701?itmmeta=01KX5C66KH31KXGQ7DFS6194CG&hash=item4a2c0062cd:g:YTMAAeSwfZRqT~vG">View Item</a>
+<a class="button" href="https://www.ebay.com/itm/318565802701">View Item</a>
 
 </div>
-
-
 
 
 <div class="card">
 
 <div class="photo">
+
 <img src="2.jpeg" alt="Collectible 2">
+
 </div>
 
-<h3>Green River Whiskey tin poster</h3>
+<h3>Green River Whiskey Tin Poster</h3>
 
-<p>*REDBACK*</p>
+<p>Rare vintage advertising collectible.</p>
 
 <div class="price">$00.00</div>
 
-<a class="button" href="YOUR_EBAY_ITEM_LINK_2">View Item</a>
+<a class="button" href="#">View Item</a>
 
 </div>
-
-
 
 
 <div class="card">
 
 <div class="photo">
+
 <img src="3.jpeg" alt="Collectible 3">
+
 </div>
 
 <h3>Classic Collectible #3</h3>
 
-<p>A memorable item chosen for craftsmanship and history.</p>
+<p>A memorable piece of history.</p>
 
 <div class="price">$00.00</div>
 
-<a class="button" href="YOUR_EBAY_ITEM_LINK_3">View Item</a>
+<a class="button" href="#">View Item</a>
 
 </div>
-
-
 
 
 <div class="card">
 
 <div class="photo">
+
 <img src="4.jpeg" alt="Collectible 4">
+
 </div>
 
 <h3>Rare Find #4</h3>
 
-<p>A unique discovery waiting for its next collector.</p>
+<p>A unique discovery waiting for a collector.</p>
 
 <div class="price">$00.00</div>
 
-<a class="button" href="YOUR_EBAY_ITEM_LINK_4">View Item</a>
+<a class="button" href="#">View Item</a>
 
 </div>
-
-
 
 
 <div class="card">
 
 <div class="photo">
+
 <img src="5.jpeg" alt="Collectible 5">
+
 </div>
 
 <h3>Limited Treasure #5</h3>
 
-<p>A special collectible with a story worth preserving.</p>
+<p>A special collectible with a story.</p>
 
 <div class="price">$00.00</div>
 
-<a class="button" href="YOUR_EBAY_ITEM_LINK_5">View Item</a>
+<a class="button" href="#">View Item</a>
 
 </div>
 
-
-
 </div>
 
-
 </div>
-
-
-
 
 
 <footer>
@@ -605,7 +620,6 @@ Lucas brings a fresh entrepreneurial vision and a commitment to building the fut
 <a href="contact.html">Contact Us</a>
 
 </div>
-
 
 
 
@@ -629,16 +643,21 @@ Seller Profile
 
 
 
-
 <div>
 
 <h3>Connect</h3>
 
-<a href="#">Instagram</a>
+<a href="#">
+Instagram
+</a>
 
-<a href="#">Facebook</a>
+<a href="#">
+Facebook
+</a>
 
-<a href="#">Email</a>
+<a href="mailto:Getbackmachine@gmail.com">
+Email
+</a>
 
 </div>
 
@@ -659,48 +678,111 @@ Seller Profile
 
 
 
+<style>
+
+footer{
+
+background:#24150e;
+
+color:#f5dfb3;
+
+padding:50px 25px;
+
+margin-top:70px;
+
+}
+
+
+.footer-grid{
+
+max-width:1150px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+gap:40px;
+
+}
+
+
+footer h3{
+
+color:#e49a50;
+
+font-size:22px;
+
+}
+
+
+footer a{
+
+display:block;
+
+color:#f5dfb3;
+
+text-decoration:none;
+
+margin:12px 0;
+
+transition:.3s;
+
+}
+
+
+footer a:hover{
+
+color:#e49a50;
+
+transform:translateX(5px);
+
+}
+
+
+.bottom{
+
+text-align:center;
+
+margin-top:40px;
+
+opacity:.7;
+
+}
+
+</style>
+
 
 
 <script>
 
 
-const image =
+const heroImage =
 document.getElementById("heroImage");
-
-
-const box =
-document.getElementById("heroBox");
 
 
 
 window.addEventListener("scroll",()=>{
 
 
-let y =
-window.scrollY;
+let y = window.scrollY;
 
 
 
-image.style.transform =
+heroImage.style.transform =
 
 `
 
 scale(1.12)
 
 translate(
+
 ${Math.sin(y/400)*15}px,
+
 ${y*.12}px
+
 )
-
-`;
-
-
-
-box.style.transform =
-
-`
-
-translateY(${y*-.18}px)
 
 `;
 
@@ -712,6 +794,6 @@ translateY(${y*-.18}px)
 </script>
 
 
-
 </body>
+
 </html>
